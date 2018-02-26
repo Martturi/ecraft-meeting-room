@@ -1,0 +1,247 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+* {
+  /*box-sizing: border-box;*/
+}
+
+body{
+  font-family: Lato, sans-serif;
+  margin:0;
+}
+
+/*"current meeting" text*/
+h2{
+  color: rgba(255,255,255,0.7);
+  margin-top: 10vh;
+  font-size: calc(4px + 2.1vmin);
+  font-weight: 300;
+}
+
+/*current meeting name*/
+h3{
+  margin-top:0;
+  font-size: calc(10px + 7vmin);
+  font-variant: all-small-caps;
+  font-weight: 900;
+  padding-left: 7vmin;
+  padding-right: 7vmin;
+}
+
+/*"conference room" text*/
+h4{
+  color:darkgray;
+  font-size: 15px;
+  font-variant: all-petite-caps;
+  margin:0;
+  padding-top: 1vmin;
+}
+
+/*conference room name*/
+h5{
+  font-size: 20px;
+  margin-top:0;
+  margin-bottom:6px;
+  font-variant: all-small-caps;
+}
+
+/*titles in eventviewer*/
+h6{
+  position: relative;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 70px;
+  padding: 0;
+  font-variant: all-small-caps;
+}
+
+[class*="col-"]{
+  float: left;
+  width:100%;
+  padding: 0;
+}
+
+/*Resizes all cols when above the set width. Probably desktop.
+currently using col-3 and col-6, others added for redundancy*/
+@media only screen and (min-width: 600px) {
+  .col-1 {width:11.1%; max-width: 400px;}
+  .col-2 {width:22.2%; max-width: 600px;}
+  .col-3 {width:33.3%; max-width: 800px;}
+  .col-4 {width:44.4%; max-width: 1000px;}
+  .col-5 {width:55.5%; max-width: 1200px;}
+  .col-6 {width:66.6%; max-width: 1400px;}
+  .col-7 {width:77.7%; max-width: 1600px;}
+  .col-8 {width:88.8%; max-width: 1800px;}
+  .col-9 {width:99.9%; max-width: 2000px;}
+}
+
+.row::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/*infoscreen view*/
+#infoscreen{
+  float:left;
+  color: white;
+  text-align: center;
+  background-image: url("/src/resources/elements/bg-image.jpg");
+  background-color: dimgrey;
+  background-size: cover;
+  padding-top: 2vmin;
+  height:98vh;
+}
+
+#meeting-progress span{
+  display: inline-block;
+  margin: 5px;
+}
+
+#progress-bar{
+  border-radius: 100px;
+  text-align: center;
+  width:50%;
+  margin-left:25%;
+  background-color: rgba(119, 119, 119, 0.2);
+}
+
+#progress{
+  border-radius: 100px;
+  width:25%;
+  height:7px;
+  background-color: #ffcc00;
+}
+
+#upcoming-events-bg{
+  position: absolute;
+  bottom:0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgba(2, 2, 25, 0.1);
+  border-top: solid rgba(50,50,50,0.2);
+  min-height: 4vmin;
+}
+
+#upcoming-events{
+  color: white;
+}
+
+
+/*calendar view*/
+#calendar {
+  background: white;
+  height:99vh;
+  display: block;
+}
+
+#room-info{
+  padding-left:10px;
+  width:100%;
+  border-bottom: 5px solid rgba(246, 246, 246, 0.2);
+}
+
+#cal_view{
+  overflow-y: scroll;
+  height:80vh;
+}
+
+#hours{
+  float:left;
+  font-size: 12px;
+  text-align: left;
+  padding:0;
+  margin:0;
+}
+
+#hours li{
+  display: block;
+  padding: 10px;
+  padding-left:20px;
+}
+
+#events{
+  float:left;
+
+}
+
+
+/*event-viewer view*/
+#event-viewer{
+  float:left;
+  height:99vh;
+  border-top: solid grey 1px;
+  overflow: scroll;
+  display: none;
+}
+
+#event-viewer img{
+  float:left;
+  padding: 10px;
+}
+
+#event-viewer p {
+  font-variant: all-small-caps;
+}
+
+#event-name{
+  display: inline-block;
+  width: 100%;
+  background: #fc0;
+  border-bottom: solid grey 1px;
+}
+
+.event-date-time{
+  display: inline-block;
+  width: 100%;
+  border-bottom: solid grey 1px;
+}
+
+#event-participants{
+  width: 100%;
+  display: inline-block;
+}
+
+#participants{
+  width: 100%;
+  display: inline-block;
+}
+
+#participants img{
+  float: left;
+  padding-right: 0;
+}
+
+#participant-names{
+  display: block;
+  width: 100%;
+}
+
+#event-description{
+  display: inline-block;
+  width: 100%;
+  border-bottom: solid grey 1px;
+  border-top: solid grey 1px;
+}
+
+#description-text{
+  display: inline-block;
+  width: 100%;
+}
+
+.btn{
+  float:left;
+  color: white;
+  height: 70px;
+  width: 70px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  margin: 0;
+}
+
+#event-participants .btn {
+  color: grey;
+}
+
