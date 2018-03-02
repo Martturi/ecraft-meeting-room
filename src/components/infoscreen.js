@@ -1,4 +1,5 @@
 var currentevent = ongoing_event();
+var todaysEvents = list_todays_events();
 export var timeProgress = 1
 if (currentevent === null) {
   currentevent = {"Subject":"No currently ongoing meeting", "StartTime":"2018-00-00T00:00:00", "EndTime":"2018-00-00T00:00:00", "Organizer": "", "Participants":null};
@@ -6,6 +7,8 @@ if (currentevent === null) {
 else {
   timeProgress = remainingTime(currentevent)
 }
+
+
 
 function remainingTime(currentevent){
   var endHours = currentevent.EndTime.slice(11,13);
@@ -27,7 +30,5 @@ export class Infoscreen {
   StartTime = currentevent.StartTime.slice(11,16);
   EndTime = currentevent.EndTime.slice(11,16);
   RemainingTime = timeProgress;
+  nextEvent = nextEvents();
 }
-
-
-

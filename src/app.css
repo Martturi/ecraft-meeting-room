@@ -12,7 +12,7 @@ body{
 /*"current meeting" text*/
 h2{
   color: rgba(255,255,255,0.7);
-  margin-top: 10vh;
+  margin-top: 10vmin;
   font-size: calc(4px + 2.1vmin);
   font-weight: 300;
 }
@@ -20,11 +20,12 @@ h2{
 /*current meeting name*/
 h3{
   margin-top:0;
-  font-size: calc(10px + 7vmin);
+  font-size: calc(12px + 6vmin);
   font-variant: all-small-caps;
   font-weight: 900;
   padding-left: 7vmin;
   padding-right: 7vmin;
+  max-height: 30vh;
 }
 
 /*"conference room" text*/
@@ -41,17 +42,6 @@ h5{
   font-size: 20px;
   margin-top:0;
   margin-bottom:6px;
-  font-variant: all-small-caps;
-}
-
-/*titles in eventviewer*/
-h6{
-  position: relative;
-  font-size: 20px;
-  margin: 0px;
-  margin-top: 20px;
-  margin-left: 70px;
-  padding: 0;
   font-variant: all-small-caps;
 }
 
@@ -157,13 +147,11 @@ currently using col-3 and col-6, others added for redundancy*/
 
 #hours li{
   display: block;
-  padding: 10px;
-  padding-left:20px;
+  padding: 10px 10px 10px 20px;
 }
 
 #events{
   float:left;
-
 }
 
 
@@ -176,12 +164,21 @@ currently using col-3 and col-6, others added for redundancy*/
   display: none;
 }
 
-#event-viewer img{
+.text-holder {
+  float: left;
+  width: calc(100% - 75px);
+}
+
+.img-holder {
   float:left;
-  padding: 10px;
+  height: 100%;
+  margin: 10px 10px 10px 5px;
 }
 
 #event-viewer p {
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
   font-variant: all-small-caps;
 }
 
@@ -195,27 +192,30 @@ currently using col-3 and col-6, others added for redundancy*/
 .event-date-time{
   display: inline-block;
   width: 100%;
+  height: 75px;
   border-bottom: solid grey 1px;
 }
 
-#event-participants{
-  width: 100%;
-  display: inline-block;
-}
-
-#participants{
-  width: 100%;
-  display: inline-block;
+#participants button{
+  float:right;
 }
 
 #participants img{
-  float: left;
-  padding-right: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #participant-names{
-  display: block;
+  display: inline-block;
+  margin: 15px auto;
+  padding: 10px 0;
+}
+
+#participant-list li {
+  float: left;
   width: 100%;
+  margin: 0;
+  padding-left: 70px;
 }
 
 #event-description{
@@ -227,21 +227,29 @@ currently using col-3 and col-6, others added for redundancy*/
 
 #description-text{
   display: inline-block;
-  width: 100%;
+  padding-left: 70px;
+}
+
+#description-text p{
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .btn{
   float:left;
   color: white;
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  width: 50px;
   font-size: 20px;
   border: none;
   background: none;
   margin: 0;
+  padding: 0;
 }
 
 #event-participants .btn {
   color: grey;
+  font-size: 25px;
 }
 

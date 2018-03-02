@@ -1,43 +1,58 @@
 <template>
   <div id = "event-viewer", class="col-3">
     <div id = "event-name">
-      <button class = "btn" onclick="goBack()">&lt;</button>
-      <h6>eCraft Management Monthly Meeting</h6>
+      <span class = "img-holder">
+        <button class = "btn" onclick="goBack()">&lt;</button>
+      </span>
+      <span class = text-holder>
+        <p>${name}</p>
+      </span>
     </div>
 
     <div class = "event-date-time">
-      <img src="src/resources/elements/icons/time.png">
-      <h6>3.3.2018</h6>
+      <span class = "img-holder">
+        <img src="src/resources/elements/icons/time.png">
+      </span>
+      <span class="text-holder">
+        <p>${date}</p>
+      </span>
     </div>
 
     <div class = "event-date-time">
-      <img src="src/resources/elements/icons/time.png">
-      <h6>7:30-8:30</h6>
+      <span class = "img-holder">
+        <img src="src/resources/elements/icons/time.png">
+      </span>
+      <span class="text-holder">
+        <p>${startTime}-${endTime}</p>
+      </span>
     </div>
 
     <div id = "event-participants">
-      <div id = "participants">
+      <span class = "img-holder">
         <img src="src/resources/elements/icons/person.png">
-        <h6>PARTICIPANTS</h6>
-        <button class = "btn" onclick="showParticipants()">^</button>
-
-      </div>
-      <div id = "participant-names">
-        <ul id="participant-list">
-          <li>steve</li>
-          <li>bob</li>
-          <li>joe</li>
-        </ul>
-      </div>
+      </span>
+      <span class="text-holder">
+        <div id = "participants">
+          <p>PARTICIPANTS</p>
+          <button class = "btn" onclick="showParticipants()">^</button>
+        </div>
+      </span>
+      <ul id = "participant-names">
+        ${participants}
+      </ul>
     </div>
     <div id = "event-description">
-      <div id = "description">
+      <span class = "img-holder">
         <img src="src/resources/elements/icons/description.png">
-        <h6>DESCRIPTION</h6>
-      </div>
-      <div id = "description-text">
-        <p>lorem ipsum dolor sit amet</p>
-      </div>
+      </span>
+      <span id="text-holder">
+        <div id = "description">
+          <p>DESCRIPTION</p>
+        </div>
+        <div id = "description-text">
+          <p>${description}</p>
+        </div>
+      </span>
     </div>
   </div>
 </template>
