@@ -12,9 +12,9 @@ body{
 /*"current meeting" text*/
 h2{
   color: rgba(255,255,255,0.7);
-  margin-top: 10vmin;
   font-size: calc(4px + 2.1vmin);
   font-weight: 300;
+  margin-top: 20vh;
 }
 
 /*current meeting name*/
@@ -43,6 +43,13 @@ h5{
   margin-top:0;
   margin-bottom:6px;
   font-variant: all-small-caps;
+}
+
+/*event organizer name in infoscreen*/
+h6{
+  color: rgba(255,255,255,0.7);
+  font-size: calc(4px + 2.1vmin);
+  font-weight: 300;
 }
 
 [class*="col-"]{
@@ -85,8 +92,10 @@ currently using col-3 and col-6, others added for redundancy*/
 }
 
 #meeting-progress span{
+  text-align: center;
   display: inline-block;
   margin: 5px;
+  margin-bottom: 1px;
 }
 
 #progress-bar{
@@ -100,7 +109,7 @@ currently using col-3 and col-6, others added for redundancy*/
 #progress{
   border-radius: 100px;
   width:25%;
-  height:7px;
+  height:8px;
   background-color: #ffcc00;
 }
 
@@ -114,8 +123,12 @@ currently using col-3 and col-6, others added for redundancy*/
   min-height: 4vmin;
 }
 
-#upcoming-events{
+.upcoming-events{
+  display: inline-block;
+  margin-right: 3vw;
+  margin-left: 3vw;
   color: white;
+  text-align: left;
 }
 
 
@@ -152,6 +165,13 @@ currently using col-3 and col-6, others added for redundancy*/
 
 #events{
   float:left;
+}
+
+#time-line{
+  position:relative;
+  /*34px per 30 min*/
+  top: calc(34px*15.5);
+  color: #ffcc00;
 }
 
 
@@ -197,7 +217,8 @@ currently using col-3 and col-6, others added for redundancy*/
 }
 
 #participants button{
-  float:right;
+  float:left;
+  padding-top: 20px;
 }
 
 #participants img{
