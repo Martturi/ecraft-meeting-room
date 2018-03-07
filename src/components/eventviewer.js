@@ -1,15 +1,21 @@
-var selectedEventName = "No currently ongoing meeting is available";
-var selectedEventDate = "3.3.2018";
-var selectedEventStartTime = "00:00";
-var selectedEventEndTime = "01:00";
-var selectedEventParticipants = ["steve", "bob", "joe"];
-var selectedEventDescription = "Lorem ipsum dolor sit amet blah blah blah blah lorem ipsum dolor sit amet";
+let selectedEvent = {
+  "name": "No currently ongoing meeting is available",
+  "date": "3.3.2018",
+  "startTime": "00:00",
+  "endTime": "01:00",
+  "participants": ["steve", "bob", "joe"],
+  "description": "Lorem ipsum dolor sit amet blah blah blah blah lorem ipsum dolor sit amet",
+};
 
 export class Eventviewer {
-  name=selectedEventName;
-  date=selectedEventDate;
-  startTime=selectedEventStartTime;
-  endTime=selectedEventEndTime;
-  participants=selectedEventParticipants;
-  description=selectedEventDescription;
+  constructor() {
+    this.name = selectedEvent.name;
+    this.date = selectedEvent.date;
+    this.startTime = selectedEvent.startTime;
+    this.endTime = selectedEvent.endTime;
+    this.participants = selectedEvent.participants;
+    this.description = selectedEvent.description;
+
+
+  }
 }

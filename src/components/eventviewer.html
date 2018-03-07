@@ -1,5 +1,5 @@
 <template>
-  <div id = "event-viewer", class="col-3">
+  <div id = "event-viewer" , class="col-3">
     <div id = "event-name">
       <span class = "img-holder">
         <button class = "btn" onclick="goBack()">&lt;</button>
@@ -38,7 +38,7 @@
         </div>
       </span>
       <ul id = "participant-names">
-        ${participants}
+        <li repeat.for="participant of participants">${participant}</li>
       </ul>
     </div>
     <div id = "event-description">

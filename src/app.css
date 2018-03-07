@@ -58,9 +58,11 @@ h6{
   padding: 0;
 }
 
-/*Resizes all cols when above the set width. Probably desktop.
-currently using col-3 and col-6, others added for redundancy*/
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 440px){
+  .upcoming-events{ display: inline-block;}
+}
+
+@media only screen and (min-width: 710px) {
   .col-1 {width:11.1%; max-width: 400px;}
   .col-2 {width:22.2%; max-width: 600px;}
   .col-3 {width:33.3%; max-width: 800px;}
@@ -121,12 +123,15 @@ currently using col-3 and col-6, others added for redundancy*/
   background: rgba(2, 2, 25, 0.1);
   border-top: solid rgba(50,50,50,0.2);
   min-height: 4vmin;
+  max-height: 11vh;
 }
 
 .upcoming-events{
+  font-size: 12px;
   display: inline-block;
   margin-right: 3vw;
   margin-left: 3vw;
+  margin-top: 1vh;
   color: white;
   text-align: left;
 }

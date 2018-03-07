@@ -1,34 +1,43 @@
-var currentevent = ongoing_event();
-var todaysEvents = list_todays_events();
-export var timeProgress = 1
-if (currentevent === null) {
-  currentevent = {"Subject":"No currently ongoing meeting", "StartTime":"2018-00-00T00:00:00", "EndTime":"2018-00-00T00:00:00", "Organizer": "", "Participants":null};
+let currentEvent = ongoing_Event();
+export var timeProgress = 1;
+
+if (currentEvent === null) {
+  currentEvent = {
+    "Subject": "No currently ongoing meeting",
+    "StartTime": "2018-00-00T00:00:00",
+    "EndTime": "2018-00-00T00:00:00",
+    "Organizer": "",
+    "Participants": null
+  };
 }
 else {
-  timeProgress = remainingTime(currentevent)
+  timeProgress = remainingTime(currentEvent)
 }
 
 
 
-function remainingTime(currentevent){
-  var endHours = currentevent.EndTime.slice(11,13);
-  var startHours = currentevent.StartTime.slice(11,13);
-  var endMinutes = currentevent.EndTime.slice(14,16);
-  var startMinutes = currentevent.StartTime.slice(14,16);
-  var currentHours = currentTime.slice(11,13);
-  var currentMinutes = currentTime.slice(14,16);
+function remainingTime(currentEvent){
+  let endHours = currentEvent.EndTime.slice(11,13);
+  let startHours = currentEvent.StartTime.slice(11,13);
+  let endMinutes = currentEvent.EndTime.slice(14,16);
+  let startMinutes = currentEvent.StartTime.slice(14,16);
+  let currentHours = currentTime.slice(11,13);
+  let currentMinutes = currentTime.slice(14,16);
 
-  var totalDuration = (endHours-startHours)*60 + (endMinutes-startMinutes);
-  var timeSinceStart = (currentHours-startHours)*60 + (currentMinutes-startMinutes);
+  let totalDuration = (endHours-startHours)*60 + (endMinutes-startMinutes);
+  let timeSinceStart = (currentHours-startHours)*60 + (currentMinutes-startMinutes);
 
   return timeSinceStart/totalDuration;
 }
 
 export class Infoscreen {
-  CurrentMeeting = currentevent.Subject;
-  CurrentMeetingHost = currentevent.Organizer;
-  StartTime = currentevent.StartTime.slice(11,16);
-  EndTime = currentevent.EndTime.slice(11,16);
-  RemainingTime = timeProgress;
-  nextEvent = nextEvents();
+  constructor() {
+    this.CurrentMeeting = currentEvent.Subject;
+    this.CurrentMeetingHost = currentEvent.Organizer;
+    this.StartTime = currentEvent.StartTime.slice(11, 16);
+    this.EndTime = currentEvent.EndTime.slice(11, 16);
+    this.RemainingTime = timeProgress;
+    this.todaysEvents = list_todays_events();
+
+  }
 }
