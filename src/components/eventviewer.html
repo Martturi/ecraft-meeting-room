@@ -1,15 +1,16 @@
 <template>
   <div id = "event-viewer" , class="col-3">
-    <div id = "event-name">
+
+    <div id = "event-name" class="event-section">
       <span class = "img-holder">
         <button class = "btn" onclick="goBack()">&lt;</button>
       </span>
       <span class = text-holder>
-        <p>${name}</p>
+        <p>${event.Subject}</p>
       </span>
     </div>
 
-    <div class = "event-date-time">
+    <div class = "event-date-time event-section">
       <span class = "img-holder">
         <img src="src/resources/elements/icons/time.png">
       </span>
@@ -18,30 +19,40 @@
       </span>
     </div>
 
-    <div class = "event-date-time">
+    <div class = "event-date-time event-section">
       <span class = "img-holder">
         <img src="src/resources/elements/icons/time.png">
       </span>
       <span class="text-holder">
-        <p>${startTime}-${endTime}</p>
+        <p>${event.StartTime.slice(11,16)} TO ${event.EndTime.slice(11,16)}</p>
       </span>
     </div>
 
-    <div id = "event-participants">
+    <div class = "event-participants event-section">
       <span class = "img-holder">
         <img src="src/resources/elements/icons/person.png">
       </span>
       <span class="text-holder">
         <div id = "participants">
           <p>PARTICIPANTS</p>
+        </div>
+        <div>
           <button class = "btn" onclick="showParticipants()">^</button>
         </div>
       </span>
+    </div>
+
+    <div id="participants-list">
       <ul id = "participant-names">
-        <li repeat.for="participant of participants">${participant}</li>
+        <li repeat.for="participant of participants">
+          ${participant.Name}
+          <br>
+          ${participant.Title}
+        </li>
       </ul>
     </div>
-    <div id = "event-description">
+
+    <div id = "event-description" class="event-section">
       <span class = "img-holder">
         <img src="src/resources/elements/icons/description.png">
       </span>
@@ -49,10 +60,12 @@
         <div id = "description">
           <p>DESCRIPTION</p>
         </div>
-        <div id = "description-text">
-          <p>${description}</p>
-        </div>
       </span>
     </div>
+
+    <div id = "description-text">
+      <p>${event.Description}</p>
+    </div>
+
   </div>
 </template>

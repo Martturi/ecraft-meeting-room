@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 * {
   /*box-sizing: border-box;*/
@@ -57,11 +57,7 @@ h6{
   width:100%;
   padding: 0;
 }
-
-@media only screen and (min-width: 440px){
-  .upcoming-events{ display: inline-block;}
-}
-
+/*should switch to just using bootstrap*/
 @media only screen and (min-width: 710px) {
   .col-1 {width:11.1%; max-width: 400px;}
   .col-2 {width:22.2%; max-width: 600px;}
@@ -129,9 +125,7 @@ h6{
 .upcoming-events{
   font-size: 12px;
   display: inline-block;
-  margin-right: 3vw;
-  margin-left: 3vw;
-  margin-top: 1vh;
+  margin: 1vh 3vw;
   color: white;
   text-align: left;
 }
@@ -179,14 +173,20 @@ h6{
   color: #ffcc00;
 }
 
-
 /*event-viewer view*/
 #event-viewer{
   float:left;
   height:99vh;
-  border-top: solid grey 1px;
-  overflow: scroll;
+  border-top: solid rgba(128, 128, 128, 0.2) 1px;
+  overflow: auto;
   display: none;
+}
+
+#event-viewer p {
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  font-variant: all-small-caps;
 }
 
 .text-holder {
@@ -199,31 +199,22 @@ h6{
   height: 100%;
   margin: 10px 10px 10px 5px;
 }
-
-#event-viewer p {
-  float: left;
-  font-weight: bold;
-  font-size: 20px;
-  font-variant: all-small-caps;
-}
-
-#event-name{
+.event-section{
   display: inline-block;
   width: 100%;
-  background: #fc0;
-  border-bottom: solid grey 1px;
-}
-
-.event-date-time{
-  display: inline-block;
-  width: 100%;
+  border-bottom: solid rgba(128, 128, 128, 0.2) 1px;
   height: 75px;
-  border-bottom: solid grey 1px;
+}
+#event-name{
+  background: #fc0;
+  height: auto;
 }
 
-#participants button{
+.event-participants button{
   float:left;
-  padding-top: 20px;
+  color: grey;
+  margin-top: 12px;
+  
 }
 
 #participants img{
@@ -233,22 +224,24 @@ h6{
 
 #participant-names{
   display: inline-block;
-  margin: 15px auto;
+  margin: 10px auto;
   padding: 10px 0;
 }
 
-#participant-list li {
-  float: left;
+#participant-list{
+  margin:0;
+  padding: 0;
+}
+
+.participant-list li {
+  display: inline-block;
   width: 100%;
   margin: 0;
-  padding-left: 70px;
+  padding-bottom: 5px;
 }
 
 #event-description{
-  display: inline-block;
-  width: 100%;
-  border-bottom: solid grey 1px;
-  border-top: solid grey 1px;
+  border-top: solid rgba(128, 128, 128, 0.2) 1px;
 }
 
 #description-text{

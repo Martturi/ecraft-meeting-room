@@ -32,12 +32,8 @@ function remainingTime(currentEvent){
 
 export class Infoscreen {
   constructor() {
-    this.CurrentMeeting = currentEvent.Subject;
-    this.CurrentMeetingHost = currentEvent.Organizer;
-    this.StartTime = currentEvent.StartTime.slice(11, 16);
-    this.EndTime = currentEvent.EndTime.slice(11, 16);
+    this.CurrentMeeting = currentEvent;
     this.RemainingTime = timeProgress;
     this.todaysEvents = list_todays_events();
-
   }
 }

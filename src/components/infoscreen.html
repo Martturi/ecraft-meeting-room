@@ -2,15 +2,15 @@
   <div id="infoscreen" class="col-6">
     <h2>CURRENT MEETING<br>___</h2>
     <div class="current-meeting">
-      <h3>${CurrentMeeting}</h3>
+      <h3>${CurrentMeeting.Subject}</h3>
       <div id="meeting-progress">
-        <span>${StartTime}</span>
+        <span>${CurrentMeeting.StartTime.slice(11,16)}</span>
         <span id="progress-bar">
           <div id="progress"></div>
         </span>
-        <span>${EndTime}</span>
+        <span>${CurrentMeeting.EndTime.slice(11,16)}</span>
       </div>
-      <h6>${CurrentMeetingHost}</h6>
+      <h6>${CurrentMeeting.Organizer}</h6>
     </div>
 
     <div id="upcoming-events-bg" class="col-6">
