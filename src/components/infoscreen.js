@@ -11,7 +11,7 @@ if (currentEvent === null) {
   };
 }
 else {
-  timeProgress = remainingTime(currentEvent)
+  timeProgress = remainingTime(currentEvent)*100 + "%";
 }
 
 
@@ -33,9 +33,10 @@ function remainingTime(currentEvent){
 export class Infoscreen {
   constructor() {
     this.CurrentMeeting = currentEvent;
-    this.todaysEvents = list_todays_events();
+    this.todaysEvents = todaysEvents;
+    this.upcomingEvents = upcomingEvents;
   }
   attached(){
-    document.getElementById("progress").style.width = timeProgress*100 + "%";
+    document.getElementById("progress").style.width = timeProgress;
   }
 }

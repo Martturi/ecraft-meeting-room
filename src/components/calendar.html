@@ -6,7 +6,8 @@
     </div>
     <button onclick="selectEvent()">show my event</button>
     <div id="cal_view">
-      <ul id="hours">
+      <div id="hours-list">
+        <ul id="hours">
         <li>0:00</li>
         <li>0:30</li>
         <li>1:00</li>
@@ -54,7 +55,16 @@
         <li>23:00</li>
         <li>23:30</li>
       </ul>
+      </div>
+
       <div id="events">
+        <div id="event-button-holder" repeat.for="event of events">
+          <button class="event-button">
+            <b>${event.Subject}</b>
+            <br>
+            ${event.Organizer}
+          </button>
+        </div>
       </div>
       <div id="time-line"> _______________________</div>
     </div>

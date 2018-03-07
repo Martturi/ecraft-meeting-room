@@ -160,6 +160,16 @@ h6{
 
 #events{
   float:left;
+  width: 70%;
+}
+
+.event-button{
+  width: 100%;
+  background: white;
+  border: groove rgba(211, 211, 211, 0.13);
+  border-left: 10px solid #ffcc00;
+  text-align: left;
+
 }
 
 #time-line{
