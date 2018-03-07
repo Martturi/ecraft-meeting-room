@@ -3,9 +3,8 @@ let ongoingEvent = null;
 let todaysEvents = [];
 let eventsList = null;
 let current_time_in_minutes = parseInt(currentTime.slice(11,13))*60 + parseInt(currentTime.slice(14,16));
-console.log(current_time_in_minutes);
 let time_line_location = current_time_in_minutes*(35/30) + "px";
-console.log(time_line_location);
+
 function showParticipants(){
   let names = document.getElementById("participant-names");
   if (names.style.display === "none") {
@@ -43,10 +42,6 @@ function ongoing_Event(){
 
 function list_todays_events(){
   return todaysEvents;
-}
-
-function timeline_location(){
-  return time_line_location;
 }
 
 getEvents();

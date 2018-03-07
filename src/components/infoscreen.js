@@ -17,12 +17,12 @@ else {
 
 
 function remainingTime(currentEvent){
-  let endHours = currentEvent.EndTime.slice(11,13);
-  let startHours = currentEvent.StartTime.slice(11,13);
-  let endMinutes = currentEvent.EndTime.slice(14,16);
-  let startMinutes = currentEvent.StartTime.slice(14,16);
-  let currentHours = currentTime.slice(11,13);
-  let currentMinutes = currentTime.slice(14,16);
+  let endHours = parseInt(currentEvent.EndTime.slice(11,13));
+  let startHours = parseInt(currentEvent.StartTime.slice(11,13));
+  let endMinutes = parseInt(currentEvent.EndTime.slice(14,16));
+  let startMinutes = parseInt(currentEvent.StartTime.slice(14,16));
+  let currentHours = parseInt(currentTime.slice(11,13));
+  let currentMinutes = parseInt(currentTime.slice(14,16));
 
   let totalDuration = (endHours-startHours)*60 + (endMinutes-startMinutes);
   let timeSinceStart = (currentHours-startHours)*60 + (currentMinutes-startMinutes);
@@ -33,7 +33,9 @@ function remainingTime(currentEvent){
 export class Infoscreen {
   constructor() {
     this.CurrentMeeting = currentEvent;
-    this.RemainingTime = timeProgress;
     this.todaysEvents = list_todays_events();
+  }
+  attached(){
+    document.getElementById("progress").style.width = timeProgress*100 + "%";
   }
 }
