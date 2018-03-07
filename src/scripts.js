@@ -1,3 +1,4 @@
+/*set static for testing purposes. change it here to affect time across page*/
 let currentTime = "2018-03-03T07:45:00";
 let ongoingEvent = null;
 let todaysEvents = [];

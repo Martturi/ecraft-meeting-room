@@ -159,17 +159,19 @@ h6{
 }
 
 #events{
-  float:left;
-  width: 70%;
+  display:inline-block;
+  position: relative;
+  width: 20vmax;
+  z-index: 0;
 }
 
 .event-button{
   width: 100%;
   background: white;
-  border: groove rgba(211, 211, 211, 0.13);
-  border-left: 10px solid #ffcc00;
+  border: solid rgba(211, 211, 211, 0.13);
+  border-left: 8px solid #ffcc00;
   text-align: left;
-
+  padding: 5px;
 }
 
 #time-line{
@@ -179,10 +181,10 @@ h6{
   color: #ffcc00;
 }
 
+
 /*event-viewer view*/
 #event-viewer{
   float:left;
-
   border-top: solid rgba(128, 128, 128, 0.2) 1px;
   overflow: auto;
   display: none;
@@ -192,6 +194,7 @@ h6{
   float: left;
   font-weight: bold;
   font-size: 20px;
+  padding-left: 14px;
   font-variant: all-small-caps;
 }
 
@@ -203,7 +206,12 @@ h6{
 .img-holder {
   float:left;
   height: 100%;
-  margin: 10px 10px 10px 5px;
+  margin: 15px 10px 10px 5px;
+}
+.img-holder img{
+  margin-left: 15px;
+  height: 40px;
+  width: 40px;
 }
 .event-section{
   display: inline-block;
@@ -223,27 +231,30 @@ h6{
   
 }
 
-#participants img{
-  padding: 0;
-  margin: 0;
-}
-
 #participant-names{
   display: inline-block;
+  margin-left: 50px;
   margin: 10px auto;
   padding: 10px 0;
 }
 
 #participant-list{
+  display: inline-block;
   margin:0;
   padding: 0;
 }
 
-.participant-list li {
-  display: inline-block;
+#participant-names li {
+  display: block;
+  font-variant: all-small-caps;
   width: 100%;
-  margin: 0;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+  margin-left: 30%;
+}
+
+li b{
+  font-variant: all-petite-caps;
+  font-size: 18px;
 }
 
 #event-description{
@@ -257,6 +268,8 @@ h6{
 
 #description-text p{
   font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
   margin: 0;
   margin-bottom: 5px;
 }
